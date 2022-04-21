@@ -129,6 +129,7 @@ def __init_settings():
                 'telebot_token': "",
                 'telebot_use_chat_id': False,
                 'telebot_chat_id': "",
+                'server_name': "",
                 'discord_notify': False,
                 'discord_token': '',
                 'plex_refresh': False,
@@ -266,6 +267,7 @@ def __update_settings(old_settings):  # 升级配置文件
         new_settings['telebot_token'] = ""
         new_settings['telebot_use_chat_id'] = False
         new_settings['telebot_chat_id'] = ""
+        new_settings['server_name'] = ""
 
     if 'discord_notify' not in new_settings.keys():
         # 新增推送通知到TG的功能
