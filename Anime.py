@@ -985,7 +985,8 @@ class Anime:
         # 推送 TG 通知
         if self._settings['telebot_notify']:
             try:
-                msg = '【aniGamerPlus消息】\n《' + self._video_filename + '》下载完成, 本集 ' + str(self.video_size) + ' MB'
+                msg = '【aniGamerPlus消息】\n' + '[《' + self._video_filename + '》](' + self._settings['server_name'] + '/' + self.local_video_path + ')下载完成, 本集 ' + str(self.video_size) + ' MB'
+                [inline mention of a user](https://www.baidu.com)
                 vApiTokenTelegram = self._settings['telebot_token']
                 try:
                     if self._settings['telebot_use_chat_id'] and self._settings['telebot_chat_id']:  #手动指定发送目标
@@ -1004,7 +1005,8 @@ class Anime:
                                 + "?chat_id=" \
                                 + str(chat_id) \
                                 + "&text=" \
-                                + str(msg)
+                                + str(msg) \
+                                + "&parse_mode=MarkdownV2"
                         self.__request(req, no_cookies=True) # Send msg to telegram bot
                     except:
                         err_print(self._sn, 'TG NOTIFY ERROR', "Exception: Send msg error\nReq: " + req, status=1) # Send mag error
