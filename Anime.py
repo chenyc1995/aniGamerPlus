@@ -1007,6 +1007,7 @@ class Anime:
                                 + str(msg) \
                                 + "&parse_mode=MarkdownV2"
                         self.__request(req, no_cookies=True) # Send msg to telegram bot
+                        print('aaaaaaaaa')
                     except:
                         err_print(self._sn, 'TG NOTIFY ERROR', "Exception: Send msg error\nReq: " + req, status=1) # Send mag error
                 except:
